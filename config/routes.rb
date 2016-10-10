@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root 'members#index'
 
-  resources :index, only: [:index]
+  resources :members, only: [:index]
 end
