@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: react_ajax_basics_development
+test:
+  <<: *default
+  database: react_ajax_basics_test
+production:
+  <<: *default
+  database: react_ajax_basics_production
+  username: react_ajax_basics
+  password: <%= ENV['REACT_AJAX_BASICS_DATABASE_PASSWORD'] %>
