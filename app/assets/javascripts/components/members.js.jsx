@@ -1,21 +1,12 @@
 class Members extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      members: this.props.data
-    };
   }
 
   render() {
     let membersComponents = [];
+    this.props.data.map(function(member){membersComponents.push(<MemberListItem member = {member}/>)});
 
-    for(var index = 0; index < this.state.members.length; index++) {
-      membersComponents.push(
-        <MemberListItem
-          member = {this.state.members[index]}
-        />
-      );
-    }
     return (
       <div>
         <h3>Members of Junior Rails Developer Course:</h3>
